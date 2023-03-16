@@ -4,8 +4,8 @@ import FtSuccees from "../../assets/img/popup.png";
 export default function PopUpSuccess() {
   return (
     <>
-      <div className="animate-zoom-out flex justify-center items-center fixed inset-0 z-[99999] bg-[rgba(0,0,0,0.25)]">
-        <div className="relative bg-white rounded-3xl pt-6 pb-6 m-auto mx-4 px-4 sm:px-10">
+      <div className="flex justify-center items-center fixed inset-0 z-[99999] bg-[rgba(0,0,0,0.25)]">
+        <div className="animate-zoom-out relative bg-white rounded-3xl pt-6 pb-6 m-auto mx-4 px-4 sm:px-10">
           <p className="absolute right-5 top-3">
             <Link to="/dashboard/explore" className="text-gray-600 text-xl">
               ✕

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { v4 as id } from "uuid";
 import PopUpHipster from "./PopUpHipster";
 import PopUpHacker from "./PopUpHacker";
 import PopUpHustler from "./PopUpHustler";
 import Succees from "./PopUpSuccees";
+import ShowModal from "./ShowModal";
 
 export default function CreateProject() {
   // ~~~Tentang Proyek~~~
@@ -33,10 +33,7 @@ export default function CreateProject() {
   const [showHacker, setShowHacker] = useState(0);
   const [showHustler, setShowHustler] = useState(0);
   const [showSuccees, setShowSuccees] = useState(false);
-
-  function kode() {
-    return id;
-  }
+  const [showModal, setShowModal] = useState();
 
   // `~`~`~`~`~`~`~`~function~`~`~`~`~`~`~`~`
   // ~~~Left~~~
@@ -106,6 +103,11 @@ export default function CreateProject() {
     e.preventDefault();
 
     setShowHipster(true);
+  }
+
+  function ShowModall(e) {
+    e.preventDefault();
+    setShowModal(true);
   }
 
   function saveData(e) {
@@ -357,15 +359,13 @@ export default function CreateProject() {
                   Sebagai
                   <a
                     href="/"
-                    onClick={Hustlers}
+                    onClick={ShowModall}
                     className="ml-2 text-[#22A6B3]"
                   >
                     Hustler
                   </a>
                 </span>
-                {showHustler ? (
-                  <PopUpHustler setShowHustler={setShowHustler} />
-                ) : null}
+                {/* {showModal ? <ShowModal setShowMOdal={setShowModal} /> : null} */}
               </div>
               <div className="pt-2">
                 <button
@@ -390,13 +390,14 @@ export default function CreateProject() {
                 </button>
                 <span className="ml-2">
                   Sebagai
-                  <a href="/" onClick={Hackers} className="ml-2 text-[#22A6B3]">
+                  <a
+                    href="/"
+                    onClick={ShowModall}
+                    className="ml-2 text-[#22A6B3]"
+                  >
                     Hacker
                   </a>
                 </span>
-                {showHacker ? (
-                  <PopUpHacker setShowHacker={setShowHacker} />
-                ) : null}
               </div>
               <div className="pt-2">
                 <button
@@ -423,15 +424,13 @@ export default function CreateProject() {
                   Sebagai
                   <a
                     href="/"
-                    onClick={Hipsters}
+                    onClick={ShowModall}
                     className="ml-2 text-[#22A6B3] "
                   >
                     Hipster
                   </a>
                 </span>
-                {showHipster ? (
-                  <PopUpHipster setShowHipster={setShowHipster} />
-                ) : null}
+                {showModal ? <ShowModal setShowModal={setShowModal} /> : null}
               </div>
               <br />
               <p className=" mb-2">
